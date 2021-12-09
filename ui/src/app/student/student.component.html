@@ -1,0 +1,171 @@
+<div class="navbar navbar-expand-lg navbar-light bg-light ml-auto">
+  <span class="navbar-brand" href="#">
+    <img class="logo img-responsive" src="assets/images/logo-light.png" alt="Reigate College Logo">
+  </span>
+</div>
+
+<div class="row" *ngIf="student?.linkId !== null">
+  <div class="col-sm-12">
+    <h1 class="section-header ml-auto">Acceptance and Registration Information</h1>
+    <h5 class="section-header">Student - Personal Details</h5>
+
+    <div class="row">
+      <div class="col-md-3 col-sm-12">Legal FirstName:</div>
+      <div class="col-md-9 col-sm-12">{{ student.legalFirstName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-12">Legal Surname:</div>
+      <div class="col-md-9 col-sm-12">{{ student.legalSurname }}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-12">Date of Birth:</div>
+      <div class="col-md-9 col-sm-12">{{ student.dob }}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-12">School:</div>
+      <div class="col-md-9 col-sm-12">{{ student.schoolName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-12">Interview Date:</div>
+      <div class="col-md-9 col-sm-12">{{ student.interviewDate }}</div>
+    </div>
+    <form [formGroup]="form" novalidate class="form form-horizontal">
+      <div class="row">
+        <label for="offerAccepted" class="col-md-3 col-sm-12"><b>I/We accept the offer of a place for the above named
+          student:</b></label>
+        <div class="col-md-3 col-sm-12">
+          <input class="form-control" name="offerAccepted" id="offerAccepted" type="checkbox" id="offerAccepted"
+            value="true" formControlName="offerAccepted"/>
+        </div>
+      </div>
+      <div class="row">
+        <div *ngIf="form.controls['offerAccepted'].invalid" class="col-sm-4 control-label alert alert-danger">
+            <div *ngIf="form.controls['offerAccepted'].errors?.required">Please click Yes to complete the acceptance registration.</div>
+        </div>
+    </div>
+
+      <div class="row" *ngIf="!!form.controls['offerAccepted'].value">
+
+        <div class="row col-md-4">
+          <label for="studentSignature" class="col-sm-4 control-label">Signature of Student:</label>
+          <div class="col-md-8 col-sm-12">
+            <input type="text" class="form-control" id="studentSignature"
+              formControlName="studentSignature"/>
+          </div>
+        </div>
+
+        <div class="row col-md-4">
+          <label for="studentSignatureDate" class="col-sm-4 control-label">Student Signature Date:</label>
+          <div class="col-md-8 col-sm-12">
+            <input type="text" class="form-control" id="studentSignatureDate" placeholder="DD/MM/YYYY"
+              formControlName="studentSignatureDate" uib-datepicker-popup="dd/MM/yyyy" />
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="header row">
+            <h5 class="col section-header">Registration Form</h5>
+          </div>
+
+          <div class="row form-group">
+            <label for="ethnicityId" class="col-sm-4 control-label">Ethnicity</label>
+            <div class="col-sm-3">
+              <ethnicity-selection id="ethnicityId" formControlName="ethnicityId"></ethnicity-selection>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="llddHealthProblemId" class="col-sm-4 control-label">LLDD Health Problem</label>
+            <div class="col-sm-3">
+              <lldd-health-problem-selection id="llddHealthProblemId" formControlName="llddHealthProblemId"></lldd-health-problem-selection>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="lookedAfterChildOrAdopted" class="col-sm-4 control-label">Are you a looked after child or
+              adopted?</label>
+            <div class="col-sm-3">
+              <input type="checkbox" class="form-control" id="lookedAfterChildOrAdopted"
+                formControlName="lookedAfterChildOrAdopted" />
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="childrenServicesInvolvedAtSchool" class="col-sm-4 control-label">Have you or your family had any
+              involment with Children's Services during your secondry school years?</label>
+            <div class="col-sm-3">
+              <input type="checkbox" class="form-control" id="childrenServicesInvolvedAtSchool"
+                formControlName="childrenServicesInvolvedAtSchool" />
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="otherSocialSupportIssues" class="col-sm-4 control-label">Are there any other social issues which
+              may require further support while at college?</label>
+            <div class="col-sm-3">
+              <input type="checkbox" class="form-control" id="otherSocialSupportIssues"
+                formControlName="otherSocialSupportIssues" />
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="freeMealsWhileAtSchool" class="col-sm-4 control-label">Have you had any school meals at any
+              point since Year 7?</label>
+            <div class="col-sm-3">
+              <input type="checkbox" class="form-control" id="freeMealsWhileAtSchool"
+                formControlName="freeMealsWhileAtSchool"/>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="parentsUniversityEducated" class="col-sm-4 control-label">Have either of your parents/guardians
+              been to university and gained a Higher Diploma or Degree?</label>
+            <div class="col-sm-3">
+              <input type="checkbox" class="form-control" id="parentsUniversityEducated"
+                formControlName="parentsUniversityEducated"/>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="ehcp" class="col-sm-4 control-label">Are you currently on an EHCP plan?</label>
+            <div class="col-sm-3">
+              <input type="checkbox" class="form-control" id="ehcp" formControlName="ehcp" />
+            </div>
+          </div>
+          <div>
+            <h5 class="row">Contact to be by:</h5>
+          </div>
+          <div class="row">
+            <div class="row col-md-4">
+              <label for="contactByPost" class="col-sm-4 control-label">Post:</label>
+              <div class="col-sm-3">
+                <input type="checkbox" class="form-control" id="contactByPost" formControlName="contactByPost" />
+              </div>
+            </div>
+
+            <div class="row col-md-4">
+              <label for="contactByPhone" class="col-sm-4 control-label">telephone:</label>
+              <div class="col-sm-3">
+                <input type="checkbox" class="form-control" id="contactByPhone" formControlName="contactByPhone" />
+              </div>
+            </div>
+
+            <div class="row col-md-4">
+              <label for="contactByEmail" class="col-sm-4 control-label">email:</label>
+              <div class="col-sm-3">
+                <input type="checkbox" class="form-control" id="contactByEmail" formControlName="contactByEmail" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <button class="btn btn-primary" (click)="saveApplication(student)">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="col-sm-3" *ngIf="student?.linkId === null"><h5 class="col section-error-header">Student not found</h5></div>

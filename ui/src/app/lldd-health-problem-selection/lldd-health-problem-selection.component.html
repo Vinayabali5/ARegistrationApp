@@ -1,0 +1,4 @@
+<select [class]="classAttr" [id]="id" (change)="changeValue($event)" (blur)="onTouched()">
+    <option [value]="null">-- Please Select --</option>
+    <option *ngFor="let item of data" [value]="item.id">{{ item.code }} - {{ item.description }}</option>
+</select>

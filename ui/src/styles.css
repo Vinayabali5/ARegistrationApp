@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+  }
+  
+  .btn {
+    margin-bottom: 10px;
+    background-color: #86c142;
+    color: #fff;
+    font-family:'Rockwell W01 Bold';  
+  }
+  
+  .btn-danger {
+    margin-bottom: 10px;
+    background-color: red;
+    font-family:'Rockwell W01 Bold';  
+  }
+  
+  .mat-menu-item:hover {
+    background-color:transparent;
+  }
+  
+  .link-btn:hover {
+    background-color: t#86c142;
+    background-repeat: no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 0.8em;
+    padding: 0px;
+  }
+  
+  .ng-untouched.ng-invalid, .ng-untouched.ng-invalid > select {
+    border-color: orange;
+  }
+      
+  
+  .ng-touched.ng-invalid, .ng-touched.ng-invalid > select{
+    border-color: red;
+  }
+  
+  .alert {
+    border-radius: 0
+  }   
+  
+  body {
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .form-control.ng-touched.ng-invalid {
+    border: 2px solid red;
+  }
+  
+  .logo {
+    height: 48px;
+  }
+  
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family:'Rockwell W01 Bold';
+  }
+      
+  .h2 {
+    font-size: medium;
+      font-weight: bold;
+  }
+  
+  .section-error-header {
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    padding: 10px;
+    font-weight: normal;
+  }
+    
+
+  .section-header {
+    font-family:'Rockwell W01 Bold';
+    background-color: #86c142;
+    color: #fff;
+    padding: 10px;
+    font-weight: normal;
+  }
+     
